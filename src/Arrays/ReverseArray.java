@@ -15,79 +15,61 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 // Time Complexity : O(n)
 // Space Complexity: O(1)
 */
-interface Reverse {
-    int[] input(int a[]);
-
-    int[] reverse(int a[]);
-
-    int [] reversep(int a[]);
-
-    int[] output(int a[]);
 
 
-}
+public class ReverseArray {
 
-public class ReverseArray implements Reverse {
-    @java.lang.Override
-    public int[] input(int[] a) {
-        Scanner in= new Scanner(System.in);
+    public static void read(int[] a, Scanner in) {
         System.out.println("Enter elements");
         for (int i = 0; i < a.length; i++) {
             a[i] = in.nextInt();
         }
-        return a;
     }
 
-    @java.lang.Override
-    public int[] output(int[] a) {
-        System.out.println("Array:");
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-        System.out.println();
-        return a;
-    }
-
-    @java.lang.Override
-    public int[] reverse(int[] a) {
+    public static void reverse(int[] a) {
         int n = a.length;
         int i = 0;
         int j = n - 1;
-        while (j>i) {
+        while (j > i) {
             int temp = a[i];
             a[i] = a[j];
             a[j] = temp;
             i++;
             j--;
         }
-        return a;
-    }
-    @java.lang.Override
-    public int[] reversep(int[] a) {
-        int n=a.length;
-        for (int i=0;i<n/2;i++){
-            int temp=a[i];
-            a[i]=a[n-1-i];
-            a[n-1-i]=temp;
-        }
-        return a;
+
     }
 
-    public static void exe() {
-        ReverseArray ra = new ReverseArray();
-        Scanner in=new Scanner(System.in);
-        System.out.println("Enter Array Size:");
-        int n = in.nextInt();
-        int arr[]= new int[n];
-        ra.input(arr);
-        //ra.reverse(arr);
-        ra.reverse(arr);
-        ra.output(arr);
+    public static void reversep(int[] a) {
+        int n = a.length;
+        for (int i = 0; i < n / 2; i++) {
+            int temp = a[i];
+            a[i] = a[n - 1 - i];
+            a[n - 1 - i] = temp;
+        }
+
+    }
+
+    public static void print(int[] a) {
+        System.out.println("Array:");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println();
 
     }
 
     public static void main(String[] shashwat) {
-        exe();
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter Array Size:");
+        int n=in.nextInt();
+        int []a=new int[n];
+        read(a,in);
+        reverse(a);
+        //reversep(a);
+        print(a);
+
+
 
     }
 }
