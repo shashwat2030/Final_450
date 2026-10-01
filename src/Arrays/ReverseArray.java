@@ -65,8 +65,8 @@ public class ReverseArray {
         int n=in.nextInt();
         int []a=new int[n];
         read(a,in);
-        reverse(a);
-        //reversep(a);
+        //  reverse(a);
+        reversep(a);
         print(a);
 
 

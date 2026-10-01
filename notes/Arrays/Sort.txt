@@ -1,0 +1,17 @@
+Bubble
+↓
+Selection
+↓
+Insertion
+↓
+Shell
+↓
+Merge
+↓
+Quick
+↓
+Heap
+↓
+Bucket
+↓
+Radix

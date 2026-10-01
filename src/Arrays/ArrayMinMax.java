@@ -29,34 +29,33 @@ public class ArrayMinMax {
         }
     }
 
+    public static ArrayList<Integer> getMinMax(int arr[], int n) {
+        ArrayList<Integer> al = new ArrayList<Integer>();
 
-    public static ArrayList<Integer> getMinMax(int[] a) {
-        ArrayList<Integer> al = new ArrayList<>();
-        int min = a[0];
-        int max = a[0];
-        int n = a.length;
+        n = arr.length;
+        int min = arr[0];
+        int max = arr[0];
         for (int i = 0; i < n; i++) {
-            if (a[i] < min) {
-                min = a[i];
+            if (arr[i] < min) {
+                min = arr[i];
             }
-            if (a[i] > max) {
-                max = a[i];
+            if (arr[i] > max) {
+                max = arr[i];
             }
         }
         al.add(min);
         al.add(max);
-        System.out.println("The Result is " + al);
+        System.out.println("the result is :" + al);
         return al;
     }
 
-    public static void main(String[] shashwat) {
+    public static void main(String[] developer) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter Array Size:");
         int n = in.nextInt();
         int a[] = new int[n];
         read(a, in);
-        getMinMax(a);
-
+        getMinMax(a, n);
 
     }
 }
